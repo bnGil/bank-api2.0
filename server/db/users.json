@@ -1,0 +1,14 @@
+[
+  {
+    "id": "a1",
+    "name": "gil gili",
+    "accounts": ["133", "333"],
+    "totalCash": 123123
+  },
+  {
+    "id": "b2",
+    "name": "yael yaeli",
+    "accounts": ["233", "333"],
+    "totalCash": 456456
+  }
+]
