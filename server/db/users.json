@@ -1,14 +1,9 @@
 [
+  { "id": "a1", "accountIds": ["133", "333"], "totalCash": 123123 },
+  { "id": "b2", "accountIds": ["233", "333"], "totalCash": 456456 },
   {
-    "id": "a1",
-    "name": "gil gili",
-    "accounts": ["133", "333"],
-    "totalCash": 123123
-  },
-  {
-    "id": "b2",
-    "name": "yael yaeli",
-    "accounts": ["233", "333"],
-    "totalCash": 456456
+    "id": "abc123",
+    "accountIds": ["2b13d950-5af8-4947-bbb6-f316d31135b1"],
+    "totalCash": 0
   }
 ]

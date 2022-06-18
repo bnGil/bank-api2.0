@@ -1,23 +1,23 @@
 [
   {
-    "account": "133",
+    "id": "133",
     "cash": 123000,
     "credit": 61500,
     "usersIds": ["a1"],
     "isActive": true
   },
   {
-    "account": "233",
+    "id": "233",
     "cash": 456333,
     "credit": 228166.5,
     "usersIds": ["b2"],
     "isActive": true
   },
   {
-    "account": "333",
-    "cash": 123,
-    "credit": 61.5,
-    "usersIds": ["a1", "b2"],
+    "id": "2b13d950-5af8-4947-bbb6-f316d31135b1",
+    "cash": 0,
+    "credit": 0,
+    "usersIds": ["abc123"],
     "isActive": true
   }
 ]
