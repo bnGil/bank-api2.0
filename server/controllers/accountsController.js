@@ -1,4 +1,7 @@
-import { updateAccountCash } from "../utils/accountsUtils.js";
+import {
+  updateAccountCash,
+  updateAccountCredit,
+} from "../utils/accountsUtils.js";
 import { isExist, loadJson, saveJson } from "../utils/jsonUtils.js";
 import { updateUsers } from "../utils/usersUtils.js";
 
@@ -88,6 +91,25 @@ export const transfer = (req, res) => {
     updateAccountCash(amount, toAccId);
     updateUsers();
     res.status(200).send("The transfer was made successfuly");
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
+};
+
+export const updateCredit = (req, res) => {
+  try {
+    const { accountId, amount } = req.body;
+    if (!isExist(accountId, "accounts")) {
+      throw new Error("This account does not exist");
+    }
+    if (typeof amount !== "number") {
+      throw new Error("Amount is not a number");
+    }
+    if (amount < 0) {
+      throw new Error("Credit can only get positive numbers");
+    }
+    updateAccountCredit(accountId, amount);
+    res.status(200).send("Credit updated successfuly");
   } catch (err) {
     res.status(400).send(err.message);
   }

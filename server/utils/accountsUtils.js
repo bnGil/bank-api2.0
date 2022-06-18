@@ -69,3 +69,12 @@ export const updateAccountCash = (amount, accountId) => {
   accounts[accountIndex].cash += amount;
   saveJson(accounts, "accounts");
 };
+
+export const updateAccountCredit = (accountId, amount) => {
+  const accounts = loadJson("accounts");
+  const accountIndex = accounts.findIndex(
+    (account) => accountId === account.id
+  );
+  accounts[accountIndex].credit = amount;
+  saveJson(accounts, "accounts");
+};
