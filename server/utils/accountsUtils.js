@@ -46,7 +46,6 @@ export const deleteAccounts = (accountIdsArr) => {
 };
 
 export const deleteUserIdFromAccounts = (userId, accountIds) => {
-  // need to add that if the accountIds is empty after delete we need to delete the account?
   const accounts = loadJson("accounts");
   const accountIdsToDelete = [];
   accounts.forEach((account) => {
