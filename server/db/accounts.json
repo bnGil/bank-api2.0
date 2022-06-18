@@ -15,7 +15,7 @@
   },
   {
     "id": "333",
-    "cash": 300,
+    "cash": 400,
     "credit": 150,
     "usersIds": ["b2"],
     "isActive": true

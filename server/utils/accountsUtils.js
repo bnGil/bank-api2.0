@@ -60,3 +60,12 @@ export const deleteUserIdFromAccounts = (userId, accountIds) => {
   saveJson(accounts, "accounts");
   deleteAccounts(accountIdsToDelete);
 };
+
+export const updateAccountCash = (amount, accountId) => {
+  const accounts = loadJson("accounts");
+  const accountIndex = accounts.findIndex(
+    (account) => accountId === account.id
+  );
+  accounts[accountIndex].cash += amount;
+  saveJson(accounts, "accounts");
+};

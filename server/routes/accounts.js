@@ -4,6 +4,7 @@ import {
   depositToAccount,
   getAccountById,
   getAllAccounts,
+  transfer,
   withdrawFromAccount,
 } from "../controllers/accountsController.js";
 
@@ -13,3 +14,4 @@ router.get("/", getAllAccounts);
 router.get("/:accountId", getAccountById);
 router.put("/deposit", depositToAccount);
 router.put("/withdraw", withdrawFromAccount);
+router.put("/transfer", transfer);
