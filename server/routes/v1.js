@@ -8,7 +8,6 @@ export const router = express.Router();
 router.get("/", (req, res) => {
   try {
     res.status(200).send("Welcome to V1");
-    //probably docs react renders here
   } catch (err) {
     res.status.send(err.message);
   }

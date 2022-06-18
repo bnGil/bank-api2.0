@@ -3,21 +3,21 @@
     "id": "133",
     "cash": 200,
     "credit": 100,
-    "usersIds": ["a1"],
+    "usersIds": ["123123123"],
     "isActive": true
   },
   {
     "id": "233",
     "cash": 200,
     "credit": 100,
-    "usersIds": ["b2"],
+    "usersIds": ["456456456"],
     "isActive": true
   },
   {
     "id": "333",
     "cash": 400,
     "credit": 150,
-    "usersIds": ["b2"],
+    "usersIds": ["456456456", "123123123"],
     "isActive": true
   }
 ]
