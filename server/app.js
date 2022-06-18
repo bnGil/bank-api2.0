@@ -7,9 +7,8 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use("/api/v1", v1);
 app.use(cors);
+app.use("/api/v1", v1);
 
 const PORT = process.env.PORT || 5000;
 

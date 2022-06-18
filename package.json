@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server/app.js"
+    "server": "nodemon server/app.js",
+    "start": "node server/app.js",
+    "install-server": "cd server && npm install && cd .. ",
+    "heroku-postbuild": "npm run install-server"
   },
   "repository": {
     "type": "git",
