@@ -1,5 +1,5 @@
 import { isExist, loadJson } from "../utils/jsonUtils.js";
-import { createNewUser } from "../utils/usersUtils.js";
+import { createNewUser, deleteUserFromDB } from "../utils/usersUtils.js";
 
 export const getAllUsers = (req, res) => {
   try {
@@ -27,7 +27,6 @@ export const getUserById = (req, res) => {
 export const createUser = (req, res) => {
   try {
     const { userId, accountIds } = req.body;
-    console.log(userId, accountIds);
     if (!userId) {
       throw new Error("Missing user ID");
     }
@@ -40,6 +39,22 @@ export const createUser = (req, res) => {
 
     createNewUser(userId, accountIds);
     res.status(200).send("User has been created successfuly");
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
+};
+
+export const deleteUser = (req, res) => {
+  try {
+    const { userId } = req.body;
+    if (!userId) {
+      throw new Error("Missing user ID");
+    }
+    if (!isExist(userId, "users")) {
+      throw new Error("This user does not exist");
+    }
+    deleteUserFromDB(userId);
+    res.status(200).send("User has been deleted successfuly");
   } catch (err) {
     res.status(400).send(err.message);
   }

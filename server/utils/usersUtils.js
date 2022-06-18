@@ -1,6 +1,7 @@
 import {
   addUserIdToAccounts,
   createNewAccount,
+  deleteUserIdFromAccounts,
   getTotalCash,
 } from "./accountsUtils.js";
 import { loadJson, saveJson } from "./jsonUtils.js";
@@ -20,4 +21,12 @@ export const createNewUser = (userId, accountIds) => {
   };
   users.push(newUser);
   saveJson(users, "users");
+};
+
+export const deleteUserFromDB = (userId) => {
+  const users = loadJson("users");
+  const newUsers = users.filter((user) => user.id !== userId);
+  const { accountIds } = users.find((user) => user.id === userId);
+  deleteUserIdFromAccounts(userId, accountIds);
+  saveJson(newUsers, "users");
 };
