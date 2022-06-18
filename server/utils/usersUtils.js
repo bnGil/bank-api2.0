@@ -30,3 +30,11 @@ export const deleteUserFromDB = (userId) => {
   deleteUserIdFromAccounts(userId, accountIds);
   saveJson(newUsers, "users");
 };
+
+export const updateUsers = () => {
+  const users = loadJson("users");
+  users.forEach((user) => {
+    user.totalCash = getTotalCash(user.accountIds);
+  });
+  saveJson(users, "users");
+};

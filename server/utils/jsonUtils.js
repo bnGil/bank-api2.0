@@ -23,7 +23,9 @@ export const saveJson = (newData, fileName) => {
 
 export const isExist = (id, fileName) => {
   const data = loadJson(fileName);
-  const idx = data.findIndex((obj) => obj.id === id);
+  const idx = data.findIndex((obj) => {
+    return obj.id === id;
+  });
   return idx === -1 ? false : true;
 };
 // isExist("a1", "users");
