@@ -20,6 +20,7 @@ function Docs() {
         method="GET"
         endpoint="/users"
         explanation="Get all users"
+        type="Request example:"
         code={getUsers}
       />
       <Example
