@@ -2,7 +2,7 @@
 
 ## Description
 
-The first server I built my self!
+The first server I built myself!
 
 The purpose of the app was creating a bank API that handles CRUD requests in order to manage users and accounts data.
 The data is written and read from JSON files using node's file system.
