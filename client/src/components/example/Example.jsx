@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import Code from "../code/Code";
 import "./example.css";
 
-function Example({ method, endpoint, explanation, output }) {
+function Example({ method, endpoint, explanation, type, code }) {
   return (
-    <div className="example">
+    <div className="example-container">
       <div className="methodEp">
         <p className="method">{method}</p>
         <p className="endpoint">{endpoint}</p>
       </div>
       <p className="explanation">{explanation}</p>
-      <p className="output">
-        <pre>{output}</pre>
-      </p>
+      <p className="type">{type}</p>
+      {code && <Code code={code} language="javascript" />}
     </div>
   );
 }
