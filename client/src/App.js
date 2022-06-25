@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/api/v1" component={Docs} />
+          <Route exact path="/docs" component={Docs} />
         </Switch>
       </Router>
     </>
