@@ -25,7 +25,7 @@ function Docs() {
       />
       <Example
         method="GET"
-        endpoint="/users/:id"
+        endpoint="/users/user"
         explanation="Get a user by ID"
         type="Request example:"
         code={getUser}
@@ -52,7 +52,7 @@ function Docs() {
       />
       <Example
         method="GET"
-        endpoint="/accounts/:id"
+        endpoint="/accounts/account"
         explanation="Get an account by ID. (See get user request example)"
       />
       <Example
