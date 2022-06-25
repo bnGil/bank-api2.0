@@ -1,9 +1,15 @@
 export const getUsers = `fetch("{baseURL}/users", {
-    method: "POST",
+    method: "GET",
 })`;
 
-export const getUser = `fetch("{baseURL}/users/123123123", {
-    method: "POST",
+export const getUser = `fetch("{baseURL}/users/user", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: {
+      userId: "62b6e9922c5175eccd707169",
+    }
 })`;
 
 export const postAddUser = `fetch("{baseURL}/users/add", {
@@ -12,8 +18,8 @@ export const postAddUser = `fetch("{baseURL}/users/add", {
       "Content-Type": "application/json",
     },
     body: {
-      userId: "678678678",
-      accountIds: ["133","788"]
+      userId: "62b6e9922c5175eccd707169",
+      accountIds: ["62b6e9922c5175eccd707169","62b6e9922c5175eccd707169"]
     }
 })`;
 
@@ -23,7 +29,7 @@ export const deleteUsers = `fetch("{baseURL}/users/delete", {
       "Content-Type": "application/json",
     },
     body: {
-      userId: "678678678",
+      userId: "62b6e9922c5175eccd707169",
     }
 })`;
 
@@ -33,7 +39,7 @@ export const putCredit = `fetch("{baseURL}/accounts/credit", {
       "Content-Type": "application/json",
     },
     body: {
-      accountId: "678",
+      accountId: "62b6e9922c5175eccd707169",
       amount: 5000
     }
 })`;
@@ -44,8 +50,8 @@ export const putTransfer = `fetch("{baseURL}/accounts/transfer", {
       "Content-Type": "application/json",
     },
     body: {
-      fromAccId: "678",
-      toAccId: "123",
+      fromAccId: "62b6e9922c5175eccd707169",
+      toAccId: "62b6e9922c5175eccd707169",
       amount: 5000
     }
 })`;
