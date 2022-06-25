@@ -35,9 +35,8 @@ export const getAllUsers = async (req, res) => {
 
 export const getUserById = async (req, res) => {
   try {
-    //check if exist
-    const { userId } = req.params;
-    const user = await User.find({ userId });
+    const { userId } = req.body;
+    const user = await User.find({ _id: userId });
     res.status(200).send(user);
   } catch (err) {
     res.status(400).send(err.message);

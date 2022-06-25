@@ -8,11 +8,16 @@ import {
   updateCredit,
   withdrawFromAccount,
 } from "../controllers/accounts.controllers.js";
+import { isAccountExist } from "../middlewares/isAccountExist.middleware.js";
+import { isAmountValid } from "../middlewares/isAmountValid.middleware.js";
 
 export const router = express.Router();
 
+router.use(["/account", "/credit", "/deposit", "/withdraw"], isAccountExist);
+router.use(["/credit", "/deposit", "/withdraw", "/transfer"], isAmountValid);
+
 router.get("/", getAllAccounts);
-router.get("/:accountId", getAccountById);
+router.get("/account", getAccountById);
 router.put("/credit", updateCredit);
 router.put("/deposit", depositToAccount);
 router.put("/withdraw", withdrawFromAccount);

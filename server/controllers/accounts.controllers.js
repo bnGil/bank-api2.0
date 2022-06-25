@@ -12,9 +12,8 @@ export const getAllAccounts = async (req, res) => {
 
 export const getAccountById = async (req, res) => {
   try {
-    //check if exist
-    const { accountId } = req.params;
-    const account = await Account.find({ accountId });
+    const { accountId } = req.body;
+    const account = await Account.find({ _id: accountId });
     res.status(200).send(account);
   } catch (err) {
     res.status(400).send(err.message);
@@ -24,8 +23,13 @@ export const getAccountById = async (req, res) => {
 export const updateCredit = async (req, res) => {
   try {
     //check if exist
+    console.log(req.body);
     const { accountId, amount } = req.body;
-    await Account.findByIdAndUpdate({ _id: accountId }, { credit: amount });
+    await Account.findOneAndUpdate(
+      { _id: accountId },
+      { credit: amount },
+      { runValidators: true }
+    );
     res.status(200).send("Credit updated successfuly");
   } catch (err) {
     res.status(400).send(err.message);
@@ -64,8 +68,12 @@ export const withdrawFromAccount = async (req, res) => {
 
 export const transfer = async (req, res) => {
   try {
-    //check if exist
     const { fromAccId, toAccId, amount } = req.body;
+    const fromAccount = await Account.findById({ _id: fromAccId });
+    const toAccount = await Account.findById({ _id: toAccId });
+    if (!fromAccount || !toAccount) {
+      return res.status(400).send("One or two of the accounts do not exist");
+    }
     await Account.findByIdAndUpdate(
       { _id: fromAccId },
       { $inc: { cash: -amount } }
