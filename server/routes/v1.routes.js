@@ -14,4 +14,4 @@ router.get("/", (req, res) => {
 });
 
 router.use("/users", usersRouter);
-// router.use("/accounts", accountsRouter);
+router.use("/accounts", accountsRouter);
