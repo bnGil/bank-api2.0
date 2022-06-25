@@ -4,7 +4,7 @@ import cors from "cors";
 import { fileURLToPath } from "url";
 
 import "./db/mongoose.js";
-import { router as v1 } from "./routes/v1.js";
+import { router as v1 } from "./routes/v1.routes.js";
 
 const fileName = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileName);

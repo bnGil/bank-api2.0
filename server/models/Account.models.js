@@ -5,7 +5,6 @@ const { Schema } = mongoose;
 const accountSchema = new Schema({
   usersIds: {
     type: [String],
-    required: true,
   },
   credit: {
     type: Number,
@@ -22,4 +21,4 @@ const accountSchema = new Schema({
   },
 });
 
-export const Account = mongoose.model("Account", userSchema);
+export const Account = mongoose.model("Account", accountSchema);

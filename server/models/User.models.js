@@ -3,13 +3,14 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
+  name: {
+    type: String,
+  },
   accountIds: {
     type: [String],
-    required: true,
   },
   totalCash: {
     type: Number,
-    required: true,
   },
 });
 
