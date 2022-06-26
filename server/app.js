@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1", v1);
 app.use(cors);
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
