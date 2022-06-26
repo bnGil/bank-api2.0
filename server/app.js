@@ -27,7 +27,7 @@ app.get("/test", (req, res) => {
 app.use("/api/v2", v1);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  req.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
