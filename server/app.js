@@ -24,7 +24,7 @@ app.get("/test", (req, res) => {
   }
 });
 app.use(cors);
-app.use("/api/v1", v1);
+app.use("/api/v2", v1);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
