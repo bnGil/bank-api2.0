@@ -24,10 +24,10 @@ app.get("/test", (req, res) => {
     res.send(e.message);
   }
 });
-app.use("/api/v2", v1);
+app.use("/api/v1", v1);
 
 app.get("*", (req, res) => {
-  req.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.join(publicPath, "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
