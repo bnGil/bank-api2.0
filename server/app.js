@@ -26,7 +26,7 @@ app.get("/test", (req, res) => {
 });
 app.use("/api/v2", v1);
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
