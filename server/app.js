@@ -16,6 +16,13 @@ app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors);
+app.get("/test", (req, res) => {
+  try {
+    res.send({ __dirname, publicPath });
+  } catch (e) {
+    res.send(e.message);
+  }
+});
 app.use("/api/v1", v1);
 
 app.get("/*", (req, res) => {
