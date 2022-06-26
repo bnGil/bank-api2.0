@@ -3,12 +3,12 @@ import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
 
-import "./db/mongoose.js";
-import { router as v1 } from "./routes/v1.routes.js";
+import "./server/db/mongoose.js";
+import { router as v1 } from "./server/routes/v1.routes.js";
 
 const fileName = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileName);
-const publicPath = path.join(__dirname, "../client/build");
+const publicPath = path.join(__dirname, "./client/build");
 
 const app = express();
 
