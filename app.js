@@ -8,7 +8,7 @@ import { router as v1 } from "./server/routes/v1.routes.js";
 
 const fileName = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(fileName);
-const publicPath = path.join(__dirname, "./client/build");
+const publicPath = path.join(__dirname, "client/build");
 
 const app = express();
 
