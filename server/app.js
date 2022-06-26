@@ -12,8 +12,9 @@ const publicPath = path.join(__dirname, "../client/build");
 
 const app = express();
 
-app.use(express.static(publicPath));
+app.use(cors);
 app.use(express.json());
+app.use(express.static(publicPath));
 
 app.use(express.urlencoded({ extended: true }));
 app.get("/test", (req, res) => {
@@ -23,10 +24,9 @@ app.get("/test", (req, res) => {
     res.send(e.message);
   }
 });
-app.use(cors);
 app.use("/api/v2", v1);
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
