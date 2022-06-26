@@ -13,5 +13,6 @@ export const isAccountExist = async (req, res, next) => {
   if (!account) {
     return res.status(400).send("This account does not exist");
   }
+  req.account = account;
   next();
 };
